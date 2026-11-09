@@ -6,7 +6,7 @@
 
 \usepackage{url}
 \usepackage{amsthm}
-
+\usepackage{booktabs}
 \theoremstyle{definition}
 \newtheorem{definicija}{Definicija}
 
@@ -18,6 +18,7 @@
 % Nastavimo odmik prve vrstice v odstavku na 0mm.
 \setlength{\parindent}{0mm}
 
+\newcommand{\m}{\mathcal{M}_2}
 % Kjer v besedilu naletite na niz `!!`, ga nadomestite z matematičnim izrazom
 % iz datoteke `magic-resitev.pdf`.
 
@@ -168,7 +169,7 @@ in zato kvadrat ni normalen.
        % oznaka: eq:mc
        % Okolje `equation` je že prikazni matematični način,
        % zato tu izraz vpišite brez `\[` in `\]`.
-       M_2(n) = \frac{1}{2}n(n^2+1)
+       \m(n) = \frac{1}{2}n(n^2+1)
     \end{equation}
   \end{izrek}
 % Konec okolja izrek
@@ -180,12 +181,12 @@ in zato kvadrat ni normalen.
       števil (glej \ref{eq:numbers} na strani \pageref{eq:numbers}) enaka
       !!. Ker imamo
       v kvadratu \(n\) vrstic z enako vsoto, je vsota števil v eni vrstici
-      enaka številu \(M_2(n)\). % sklica: eq:numbers, eq:numbers
+      enaka številu \(\m(n)\). % sklica: eq:numbers, eq:numbers
 \end{proof}
 % Konec dokaza
 
 Preprost račun pokaže, da je konstanti ?? analogna konstanta
-\(M_2(n;A,D)\) za magični kvadrat, v katerem so nameščena števila
+\(\m(n;A,D)\) za magični kvadrat, v katerem so nameščena števila
 \(A\), \(A+D\), \(A+2D\), \ldots, \(A+(n^2-1)D\), enaka % sklic: eq:mc
 !!
 
@@ -206,11 +207,22 @@ Preprost račun pokaže, da je konstanti ?? analogna konstanta
 % - napis nad tabelo: Število različnih normalnih magičnih kvadratov
 % - oznaka: table:stevila
 % Začetek tabele
-      točna vrednost približek
-      red 1 2 3 4 5 6
-      % Decimalno vejico v matematičnem načinu zapišite kot {,},
-      % sicer jo LaTeX izpiše kot ločilo, s presledkom za njo.
-      število kvadratov 1 0 1 880 275305224 !!
+   
+   \begin{table}
+         \centering
+         \caption{napis nad tabelo: Število različnih normalnih magičnih kvadratov}
+         \label{table:stevila}
+         
+         \begin{tabular}{|l|c|c|c|c|c|c|}\toprule
+            & \multicolumn{5}{|c|}{točna vrednost} & približek\\
+            \midrule
+            red & 1 & 2 & 3 & 4 & 5 & 6\\
+            % Decimalno vejico v matematičnem načinu zapišite kot {,},
+            % sicer jo LaTeX izpiše kot ločilo, s presledkom za njo.
+            število kvadratov & 1 & 0 & 1 & 880 & 275305224 & !!\\
+            \bottomrule
+         \end{tabular}
+   \end{table}
 % Konec tabele
 
 Vse normalne magične kvadrate reda 4 je oštevilčil Frénicle de Bessy
